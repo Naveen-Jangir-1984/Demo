@@ -44,6 +44,7 @@ public class TestDeposit extends BaseTest {
 	public void TC005_AddNewDepositSuccessfully() throws InterruptedException {
 		loginPage.Login(UserName, Password);
 		homePage.ClickLinkDeposit();
+		getHelper().randomClick();
 		depositPage.VerifyDepositPageAllElements();
 		depositPage.TheDepositFormTitleShouldBe("Amount Deposit Form");
 		deposit = createDepositData();

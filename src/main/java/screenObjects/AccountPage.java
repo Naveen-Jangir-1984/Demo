@@ -21,6 +21,7 @@ public class AccountPage extends CommonPage {
 	//Input Customer ID
 	public void InputCustomerId(String cusId) {
 		try {
+			getHelper().waitForControlVisible(accountElement.ele_input_cus_id);
 			getHelper().findElement(accountElement.ele_input_cus_id).sendKeys(cusId);
 		} catch (Exception e) {
 			Result.checkFail("Exception desc : " + e.getMessage());
@@ -30,6 +31,7 @@ public class AccountPage extends CommonPage {
 	//Select Account Type
 	public void SelectAccountType(String accType) {
 		try {
+			getHelper().waitForControlVisible(accountElement.ele_dropdown_account_type);
 			Select accs = new Select(getHelper().findElement(accountElement.ele_dropdown_account_type));
 			accs.selectByValue(accType);
 		} catch (Exception e) {
@@ -40,6 +42,7 @@ public class AccountPage extends CommonPage {
 	//Input Initial deposit
 	public void InputInitialDeposit(String initDept) {
 		try {
+			getHelper().waitForControlVisible(accountElement.ele_input_init_deposit);
 			getHelper().findElement(accountElement.ele_input_init_deposit).sendKeys(initDept);
 		} catch (Exception e) {
 			Result.checkFail("Exception desc : " + e.getMessage());
@@ -49,6 +52,7 @@ public class AccountPage extends CommonPage {
 	//Click button Submit
 	public void ClickButtonSubmit() {
 		try {
+			getHelper().waitForControlVisible(accountElement.ele_btn_submit);
 			getHelper().findElement(accountElement.ele_btn_submit).click();
 		} catch (Exception e) {
 			Result.checkFail("Exception desc : " + e.getMessage());
@@ -58,6 +62,7 @@ public class AccountPage extends CommonPage {
 	//Click button Reset
 	public void ClickButtonReset() {
 		try {
+			getHelper().waitForControlVisible(accountElement.ele_btn_reset);
 			getHelper().findElement(accountElement.ele_btn_reset).click();
 		} catch (Exception e) {
 			Result.checkFail(" Exception desc : " + e.getMessage());
@@ -80,6 +85,7 @@ public class AccountPage extends CommonPage {
 	public String GetAccountId() {
 		String cusId = "";
 		try {
+			getHelper().waitForControlVisible(accountElement.ele_label_table_acc_id_value);
 			cusId = getHelper().getTextElement(accountElement.ele_label_table_acc_id_value);
 		} catch (Exception e) {
 			Result.checkFail("Exception desc : " + e.getMessage());
@@ -108,6 +114,7 @@ public class AccountPage extends CommonPage {
 	//Verify the header form add new Account
 	public void TheAccountFormTitleShouldBe(String formTitle) {
 		try {
+			getHelper().waitForControlVisible(accountElement.ele_label_account_title);
 			Assert.assertTrue(getHelper().elementTextShoudlBe(accountElement.ele_label_account_title, formTitle));
 		} catch (Exception e) {
 			Result.checkFail("Exception desc : " + e.getMessage());
@@ -117,6 +124,7 @@ public class AccountPage extends CommonPage {
 	//Verify the table content new Account successfully
 	public void TheTableContentTextShouldBe(String tableContentText) {
 		try {
+			getHelper().waitForControlVisible(accountElement.ele_label_created_acc_detail);
 			Assert.assertTrue(getHelper().elementTextShoudlBe(accountElement.ele_label_created_acc_detail, tableContentText));
 		} catch (Exception e) {
 			Result.checkFail("Exception desc : " + e.getMessage());
