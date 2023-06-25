@@ -179,12 +179,12 @@ public class Helper extends CommonPage {
 	}
 
 	/**
-	 * Verify element text
+	 * Verify element text contains
 	 *
 	 * @param locator
 	 * @return
 	 */
-	public Boolean elementTextShoudlBe(String locator, String value) {
+	public Boolean elementTextContains(String locator, String value) {
 		Boolean isTextExists = false;
 		try {
 			waitElementIsDisplayed(locator);

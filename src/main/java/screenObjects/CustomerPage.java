@@ -192,7 +192,7 @@ public class CustomerPage extends CommonPage {
 	//Verify the table header create new Customer successfully
 	public void TheTableHeaderTextShouldBe(String tableHeaderText) {
 		try {
-			Assert.assertTrue(getHelper().elementTextShoudlBe(customerElement.ele_label_new_customer_title, tableHeaderText));
+			Assert.assertTrue(getHelper().elementTextContains(customerElement.ele_label_new_customer_title, tableHeaderText));
 		} catch (Exception e) {
 			Result.checkFail(" Exception desc : " + e.getMessage());
 		}
@@ -201,7 +201,7 @@ public class CustomerPage extends CommonPage {
 	//Verify the table content new Customer successfully
 	public void TheTableContentTextShouldBe(String tableContentText) {
 		try {
-			Assert.assertTrue(getHelper().elementTextShoudlBe(customerElement.ele_label_registered_cus_detail, tableContentText));
+			Assert.assertTrue(getHelper().elementTextContains(customerElement.ele_label_registered_cus_detail, tableContentText));
 		} catch (Exception e) {
 			Result.checkFail(" Exception desc : " + e.getMessage());
 		}
@@ -210,18 +210,18 @@ public class CustomerPage extends CommonPage {
 	// Verify new Customer created successfully
 	public void VerifyCustomerCreatedSuccessfully(Customer cus) {
 		try {
-			Assert.assertTrue(getHelper().elementTextShoudlBe(customerElement.ele_label_table_cus_name_value, cus.name));
+			Assert.assertTrue(getHelper().elementTextContains(customerElement.ele_label_table_cus_name_value, cus.name));
 			if (cus.gender.equals("f"))
-				Assert.assertTrue(getHelper().elementTextShoudlBe(customerElement.ele_label_table_cus_gender_value, "female"));
+				Assert.assertTrue(getHelper().elementTextContains(customerElement.ele_label_table_cus_gender_value, "female"));
 			else
-				Assert.assertTrue(getHelper().elementTextShoudlBe(customerElement.ele_label_table_cus_gender_value, "male"));
-			Assert.assertTrue(getHelper().elementTextShoudlBe(customerElement.ele_label_table_cus_birth_date_value, DateTime.convertDateToNewFormat(cus.dateOfBirth, "dd/MM/yyyy", "yyyy-MM-dd")));
-			Assert.assertTrue(getHelper().elementTextShoudlBe(customerElement.ele_label_table_cus_address_value, cus.address));
-			Assert.assertTrue(getHelper().elementTextShoudlBe(customerElement.ele_label_table_cus_city_value, cus.city));
-			Assert.assertTrue(getHelper().elementTextShoudlBe(customerElement.ele_label_table_cus_state_value, cus.state));
-			Assert.assertTrue(getHelper().elementTextShoudlBe(customerElement.ele_label_table_cus_pin_value, cus.pin));
-			Assert.assertTrue(getHelper().elementTextShoudlBe(customerElement.ele_label_table_cus_telephone_value, cus.telephone));
-			Assert.assertTrue(getHelper().elementTextShoudlBe(customerElement.ele_label_table_cus_email_value, cus.email));
+				Assert.assertTrue(getHelper().elementTextContains(customerElement.ele_label_table_cus_gender_value, "male"));
+			Assert.assertTrue(getHelper().elementTextContains(customerElement.ele_label_table_cus_birth_date_value, DateTime.convertDateToNewFormat(cus.dateOfBirth, "dd/MM/yyyy", "yyyy-MM-dd")));
+			Assert.assertTrue(getHelper().elementTextContains(customerElement.ele_label_table_cus_address_value, cus.address));
+			Assert.assertTrue(getHelper().elementTextContains(customerElement.ele_label_table_cus_city_value, cus.city));
+			Assert.assertTrue(getHelper().elementTextContains(customerElement.ele_label_table_cus_state_value, cus.state));
+			Assert.assertTrue(getHelper().elementTextContains(customerElement.ele_label_table_cus_pin_value, cus.pin));
+			Assert.assertTrue(getHelper().elementTextContains(customerElement.ele_label_table_cus_telephone_value, cus.telephone));
+			Assert.assertTrue(getHelper().elementTextContains(customerElement.ele_label_table_cus_email_value, cus.email));
 		} catch (Exception e) {
 			Result.checkFail("Exception desc : " + e.getMessage());
 		}

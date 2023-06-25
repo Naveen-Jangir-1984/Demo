@@ -55,7 +55,7 @@ public class SignupSuccessfulPage extends CommonPage {
 	//Verify the bar text in SignUp Page
 	public void TheBarTextShouldBe(String guruBarText) {
 		try {
-			Assert.assertTrue(getHelper().elementTextShoudlBe(signupSuccessfulElement.ele_label_guru_bar, guruBarText));
+			Assert.assertTrue(getHelper().elementTextContains(signupSuccessfulElement.ele_label_guru_bar, guruBarText));
 		} catch (Exception e) {
 			Result.checkFail(" Exception desc : " + e.getMessage());
 		}
@@ -64,8 +64,8 @@ public class SignupSuccessfulPage extends CommonPage {
 	//Verify Account
 	public void VerifyAccount(String accName, String passWord) {
 		try {
-			Assert.assertTrue(getHelper().elementTextShoudlBe(signupSuccessfulElement.ele_label_id_value, accName));
-			Assert.assertTrue(getHelper().elementTextShoudlBe(signupSuccessfulElement.ele_label_password_value, passWord));
+			Assert.assertTrue(getHelper().elementTextContains(signupSuccessfulElement.ele_label_id_value, accName));
+			Assert.assertTrue(getHelper().elementTextContains(signupSuccessfulElement.ele_label_password_value, passWord));
 		} catch (Exception e) {
 			Result.checkFail("Exception desc : " + e.getMessage());
 		}
@@ -74,7 +74,7 @@ public class SignupSuccessfulPage extends CommonPage {
 	//Verify the table text in SignUp Page Successfully
 	public void TheTableTextShouldBe(String guruTableText) {
 		try {
-			Assert.assertTrue(getHelper().elementTextShoudlBe(signupSuccessfulElement.ele_table_title, guruTableText));
+			Assert.assertTrue(getHelper().elementTextContains(signupSuccessfulElement.ele_table_title, guruTableText));
 		} catch (Exception e) {
 			Result.checkFail(" Exception desc : " + e.getMessage());
 		}
@@ -84,7 +84,7 @@ public class SignupSuccessfulPage extends CommonPage {
 	//Verify the user cusId text in SignUp Page Successfully
 	public void TheUserIdTextShouldBe(String guruUserIdText) {
 		try {
-			Assert.assertTrue(getHelper().elementTextShoudlBe(signupSuccessfulElement.ele_label_id_text, guruUserIdText));
+			Assert.assertTrue(getHelper().elementTextContains(signupSuccessfulElement.ele_label_id_text, guruUserIdText));
 		} catch (Exception e) {
 			Result.checkFail("Exception desc : " + e.getMessage());
 		}
@@ -93,7 +93,7 @@ public class SignupSuccessfulPage extends CommonPage {
 	//Verify the pass word text in SignUp Page Successfully
 	public void ThePassWordTextShouldBe(String guruPasswordText) {
 		try {
-			Assert.assertTrue(getHelper().elementTextShoudlBe(signupSuccessfulElement.ele_label_password_text, guruPasswordText));
+			Assert.assertTrue(getHelper().elementTextContains(signupSuccessfulElement.ele_label_password_text, guruPasswordText));
 		} catch (Exception e) {
 			Result.checkFail("Exception desc : " + e.getMessage());
 		}
@@ -102,7 +102,7 @@ public class SignupSuccessfulPage extends CommonPage {
 	//Verify the note text in SignUp Page Successfully
 	public void TheNoteTextShouldBe(String guruNoteText) {
 		try {
-			Assert.assertTrue(getHelper().elementTextShoudlBe(signupSuccessfulElement.ele_label_note, guruNoteText));
+			Assert.assertTrue(getHelper().elementTextContains(signupSuccessfulElement.ele_label_note, guruNoteText));
 		} catch (Exception e) {
 			Result.checkFail("Exception desc : " + e.getMessage());
 		}

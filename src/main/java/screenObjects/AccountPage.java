@@ -115,7 +115,7 @@ public class AccountPage extends CommonPage {
 	public void TheAccountFormTitleShouldBe(String formTitle) {
 		try {
 			getHelper().waitForControlVisible(accountElement.ele_label_account_title);
-			Assert.assertTrue(getHelper().elementTextShoudlBe(accountElement.ele_label_account_title, formTitle));
+			Assert.assertTrue(getHelper().elementTextContains(accountElement.ele_label_account_title, formTitle));
 		} catch (Exception e) {
 			Result.checkFail("Exception desc : " + e.getMessage());
 		}
@@ -125,7 +125,7 @@ public class AccountPage extends CommonPage {
 	public void TheTableContentTextShouldBe(String tableContentText) {
 		try {
 			getHelper().waitForControlVisible(accountElement.ele_label_created_acc_detail);
-			Assert.assertTrue(getHelper().elementTextShoudlBe(accountElement.ele_label_created_acc_detail, tableContentText));
+			Assert.assertTrue(getHelper().elementTextContains(accountElement.ele_label_created_acc_detail, tableContentText));
 		} catch (Exception e) {
 			Result.checkFail("Exception desc : " + e.getMessage());
 		}
@@ -134,12 +134,12 @@ public class AccountPage extends CommonPage {
 	//Verify new Account created successfully
 	public void VerifyAccountCreatedSuccessfully(Account acc) {
 		try {
-			Assert.assertTrue(getHelper().elementTextShoudlBe(accountElement.ele_label_table_acc_id_value, acc.accId));
-			Assert.assertTrue(getHelper().elementTextShoudlBe(accountElement.ele_label_table_cus_id_value, acc.cusId));
-			Assert.assertTrue(getHelper().elementTextShoudlBe(accountElement.ele_label_table_cus_name_value, acc.cusName));
-			Assert.assertTrue(getHelper().elementTextShoudlBe(accountElement.ele_label_table_cus_email_value, acc.cusEmail));
-			Assert.assertTrue(getHelper().elementTextShoudlBe(accountElement.ele_label_table_acc_type_value, acc.accType));
-			Assert.assertTrue(getHelper().elementTextShoudlBe(accountElement.ele_label_table_acc_current_amount_value, acc.currentAmount));
+			Assert.assertTrue(getHelper().elementTextContains(accountElement.ele_label_table_acc_id_value, acc.accId));
+			Assert.assertTrue(getHelper().elementTextContains(accountElement.ele_label_table_cus_id_value, acc.cusId));
+			Assert.assertTrue(getHelper().elementTextContains(accountElement.ele_label_table_cus_name_value, acc.cusName));
+			Assert.assertTrue(getHelper().elementTextContains(accountElement.ele_label_table_cus_email_value, acc.cusEmail));
+			Assert.assertTrue(getHelper().elementTextContains(accountElement.ele_label_table_acc_type_value, acc.accType));
+			Assert.assertTrue(getHelper().elementTextContains(accountElement.ele_label_table_acc_current_amount_value, acc.currentAmount));
 		} catch (Exception e) {
 			Result.checkFail("Exception desc : " + e.getMessage());
 		}

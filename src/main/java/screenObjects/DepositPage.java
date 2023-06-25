@@ -104,7 +104,7 @@ public class DepositPage extends CommonPage {
 	//Verify the header form add new Account
 	public void TheDepositFormTitleShouldBe(String formTitle) {
 		try {
-			Assert.assertTrue(getHelper().elementTextShoudlBe(depositElement.ele_label_deposit_title, formTitle));
+			Assert.assertTrue(getHelper().elementTextContains(depositElement.ele_label_deposit_title, formTitle));
 		} catch (Exception e) {
 			Result.checkFail(" Exception desc : " + e.getMessage());
 		}
@@ -113,11 +113,11 @@ public class DepositPage extends CommonPage {
 	//Verify new Deposit is added successfully
 	public void VerifyDepositAddedSuccessfully(Deposit deposit) {
 		try {
-			Assert.assertTrue(getHelper().elementTextShoudlBe(depositElement.ele_label_table_transaction_id_value, deposit.transId));
-			Assert.assertTrue(getHelper().elementTextShoudlBe(depositElement.ele_label_table_acc_id_value, deposit.accId));
-			Assert.assertTrue(getHelper().elementTextShoudlBe(depositElement.ele_label_table_amount_value, deposit.amount));
-			Assert.assertTrue(getHelper().elementTextShoudlBe(depositElement.ele_label_table_type_transaction_value, deposit.typeOfTransaction));
-			Assert.assertTrue(getHelper().elementTextShoudlBe(depositElement.ele_label_table_description_value, deposit.description));
+			Assert.assertTrue(getHelper().elementTextContains(depositElement.ele_label_table_transaction_id_value, deposit.transId));
+			Assert.assertTrue(getHelper().elementTextContains(depositElement.ele_label_table_acc_id_value, deposit.accId));
+			Assert.assertTrue(getHelper().elementTextContains(depositElement.ele_label_table_amount_value, deposit.amount));
+			Assert.assertTrue(getHelper().elementTextContains(depositElement.ele_label_table_type_transaction_value, deposit.typeOfTransaction));
+			Assert.assertTrue(getHelper().elementTextContains(depositElement.ele_label_table_description_value, deposit.description));
 		} catch (Exception e) {
 			Result.checkFail("Exception desc : " + e.getMessage());
 		}

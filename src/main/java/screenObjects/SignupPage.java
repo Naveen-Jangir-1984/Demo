@@ -55,7 +55,7 @@ public class SignupPage extends CommonPage {
 	//Verify the bar text in SignUp Page
 	public void TheBarTextShouldBe(String guruBarText) {
 		try {
-			Assert.assertTrue(getHelper().elementTextShoudlBe(signupElement.ele_label_guru_bar, guruBarText));
+			Assert.assertTrue(getHelper().elementTextContains(signupElement.ele_label_guru_bar, guruBarText));
 		} catch (Exception e) {
 			Result.checkFail(" Exception desc : " + e.getMessage());
 		}
@@ -64,7 +64,7 @@ public class SignupPage extends CommonPage {
 	//Verify the table text in SignUp Page
 	public void TheTableTextShouldBe(String guruTableText) {
 		try {
-			Assert.assertTrue(getHelper().elementTextShoudlBe(signupElement.ele_label_form_title, guruTableText));
+			Assert.assertTrue(getHelper().elementTextContains(signupElement.ele_label_form_title, guruTableText));
 		} catch (Exception e) {
 			Result.checkFail("Exception desc : " + e.getMessage());
 		}
@@ -73,7 +73,7 @@ public class SignupPage extends CommonPage {
 	//Verify the email cusId text in SignUp Page
 	public void TheEmailIdTextShouldBe(String guruEmailIdText) {
 		try {
-			Assert.assertTrue(getHelper().elementTextShoudlBe(signupElement.ele_label_email, guruEmailIdText));
+			Assert.assertTrue(getHelper().elementTextContains(signupElement.ele_label_email, guruEmailIdText));
 		} catch (Exception e) {
 			Result.checkFail(" Exception desc : " + e.getMessage());
 		}
